@@ -2,11 +2,13 @@ import EditInput from "../../components/Input/EditInput";
 import EditInputArea from "../../components/Input/EditInputArea";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.bubble.css";
+
 const PreviewIzin = ({ surat, handleChange }) => {
+  
   const template = {
     pembuka: "Sehubungan dengan adanya Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, deserunt? Alias maiores architecto.",
     perantara: "Dengan ini kami atas nama badan pengurus harian kegiatan, memohon kepada Bapak/Ibu supaya memberi izin tidak mengikuti perkuliahan kepada mahasiswa/i atas nama:",
-    penutup: "Demikian Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, deserunt? Alias maiores architecto.",
+    penutup: "dikarenakan harus mengikuti kegiatan tersebut. Demikian Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, deserunt? Alias maiores architecto.",
     panitia_pelaksana: "Panitia Pelaksana (Nama Kegiatan)",
     nama_organisasi: "(Nama Organisasi)",
     asal_fakultas: "Fakultas (Nama Fakultas)",
@@ -117,7 +119,7 @@ const PreviewIzin = ({ surat, handleChange }) => {
           <hr className="border-2 border-black" />
         </div>
 
-        <div className="w-full leading-[1.15] flex  justify-end  ">
+        <div className="w-full leading-[1.15] flex justify-end">
           <EditInput name="kota" variant="w-32 text-right" value={surat.kota || template.kota} handleChange={handleChange} />
           <span className="ml-0.5 mr-2">,</span>
           <p className="w-40">{getFormattedDate()}</p>
@@ -161,13 +163,12 @@ const PreviewIzin = ({ surat, handleChange }) => {
 
         <div className="leading-[1.15]">
           <p className="font-bold italic ">Assalamu'alaikum Wr. Wb.</p>
-          <ReactQuill className="indent-8 text-justify  text-5xl w-full " theme="bubble" name="pembuka" modules={modules} value={surat.pembuka || ""} onChange={(value) => handleChange({ target: { name: "pembuka", value } })} />
+          <ReactQuill className="indent-8 text-justify text-5xl w-full " theme="bubble" name="pembuka" modules={modules} value={surat.pembuka || ""} onChange={(value) => handleChange({ target: { name: "pembuka", value } })} />
           {/* <EditInputArea name="pembuka" variant="indent-8 h-20  w-full text-justify" value={surat.pembuka || template.pembuka} handleChange={handleChange} /> */}
-          {/* 
-            {surat.pembuka || template.pembuka} */}
+          {/* {surat.pembuka || template.pembuka} */}
         </div>
 
-        <div className="acara flex justify-center leading-[1.15] my-1">
+        <div className="acara flex justify-center leading-[1.15]">
           <table className="w-[70%]">
             <tbody>
               <tr>
@@ -207,7 +208,7 @@ const PreviewIzin = ({ surat, handleChange }) => {
           </table>
         </div>
 
-        <div className="leading-[1.15] my-1">
+        <div className="leading-[1.15] mt-4">
           <EditInputArea name="perantara" variant="indent-8 w-full text-justify " value={surat.perantara || template.perantara} handleChange={handleChange} />
         </div>
 
@@ -232,9 +233,8 @@ const PreviewIzin = ({ surat, handleChange }) => {
           </table>
         </div>
 
-        <div className="leading-[1.15] my-1">
+        <div className="leading-[1.15] mt-4">
           <EditInputArea name="penutup" variant="indent-8 w-full text-justify " value={surat.penutup || template.penutup} handleChange={handleChange} />
-
           {/* <p className="indent-8 text-justify">{surat.penutup || template.penutup}</p> */}
           <p className="font-bold italic">Wassalamu'alaikum Wr. Wb.</p>
         </div>

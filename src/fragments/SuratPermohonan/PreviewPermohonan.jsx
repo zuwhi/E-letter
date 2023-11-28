@@ -163,8 +163,7 @@ const PreviewPermohonan = ({ surat, handleChange }) => {
           <p className="font-bold italic ">Assalamu'alaikum Wr. Wb.</p>
           <ReactQuill className="indent-8 text-justify  text-5xl w-full " theme="bubble" name="pembuka" modules={modules} value={surat.pembuka || ""} onChange={(value) => handleChange({ target: { name: "pembuka", value } })} />
           {/* <EditInputArea name="pembuka" variant="indent-8 h-20  w-full text-justify" value={surat.pembuka || template.pembuka} handleChange={handleChange} /> */}
-          {/* 
-            {surat.pembuka || template.pembuka} */}
+          {/* {surat.pembuka || template.pembuka} */}
         </div>
 
         <div className="acara flex justify-center leading-[1.15]">
@@ -206,9 +205,9 @@ const PreviewPermohonan = ({ surat, handleChange }) => {
             </tbody>
           </table>
         </div>
-        <br />
+        {/* <br /> */}
 
-        <div className="leading-[1.15] mt-1">
+        <div className="leading-[1.15] mt-4">
           <EditInputArea name="penutup" variant="indent-8 w-full text-justify " value={surat.penutup || template.penutup} handleChange={handleChange} />
 
           {/* <p className="indent-8 text-justify">{surat.penutup || template.penutup}</p> */}
