@@ -159,7 +159,7 @@ const PreviewPermohonan = ({ surat, handleChange }) => {
         <div className="leading-[1.15]">
           <p className="font-bold italic ">Assalamu'alaikum Wr. Wb.</p>
 
-          <EditInputArea name="pembuka" variant="indent-8 h-20  w-full text-justify" value={surat.pembuka || template.pembuka} handleChange={handleChange} />
+          <EditInputArea name="pembuka" variant="indent-8 w-full text-justify" value={surat.pembuka || template.pembuka} handleChange={handleChange} />
           {/* 
             {surat.pembuka || template.pembuka} */}
         </div>
@@ -207,7 +207,7 @@ const PreviewPermohonan = ({ surat, handleChange }) => {
         <br />
 
         <div className="leading-[1.15] mt-1">
-          <EditInputArea name="penutup" variant="indent-8 h-14 w-full text-justify " value={surat.penutup || template.penutup} handleChange={handleChange} />
+          <EditInputArea name="penutup" variant="indent-8 w-full text-justify " value={surat.penutup || template.penutup} handleChange={handleChange} />
 
           {/* <p className="indent-8 text-justify">{surat.penutup || template.penutup}</p> */}
           <p className="font-bold italic">Wassalamu'alaikum Wr. Wb.</p>
