@@ -79,7 +79,7 @@ const PreviewPermohonan = ({ surat, handleChange }) => {
     <>
       <div className="">
         <div className="w-full flex leading-[1.0] justify-around ">
-          <div className="relative w-[24%] h-[6rem] items-center flex items-top mt-2 pl-3">{surat.logo_instansi && <img src={surat.logo_instansi} alt="" className="w-fit" />}</div>
+          <div className="relative w-[20%] h-[6rem] items-center flex items-top mt-2 pl-3">{surat.logo_instansi && <img src={surat.logo_instansi} alt="" className="w-fit" />}</div>
           <div className="kop w-[84%] mt-2 leading-[1.15]">
             {/* <EditInput name="panitia_pelaksana" variant="text-center font-bold uppercase" handleChange={handleChange} value={surat.panitia_pelaksana ? <>{`Panitia Pelaksana ${surat.panitia_pelaksana}`}</> : template.panitia_pelaksana}></EditInput> */}
             <p className="text-center font-bold uppercase">{surat.panitia_pelaksana ? <>{`Panitia Pelaksana ${surat.panitia_pelaksana}`}</> : template.panitia_pelaksana}</p>
