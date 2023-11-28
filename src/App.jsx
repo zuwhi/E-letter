@@ -7,11 +7,12 @@ import FormPage from "./pages/form"
 function App() {
 
   return (
-    <Router basename="/">
+    <Router>
       <Routes>
-        <Route path="/E-letter/" element={<LandingPage />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/option" element={<OptionPage />} />
         <Route path="/form" element={<FormPage />} />
+
       </Routes>
     </Router>
   );
