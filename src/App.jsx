@@ -7,7 +7,7 @@ import FormPage from "./pages/form"
 function App() {
 
   return (
-    <Router>
+    <Router basename="/">
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/option" element={<OptionPage />} />
