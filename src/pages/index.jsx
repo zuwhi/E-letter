@@ -2,16 +2,19 @@ import { Link } from "react-router-dom";
 import ButtonLp from "../components/Button/ButtonLp";
 import TitleLandingPage from "../components/Title/TitleLp";
 import Navbar from "../layouts/Navbar";
+import TypingText from "../components/Title/TypingText";
+
 
 export default function LandingPage() {
   return (
     <>
-      <Navbar to="OnLandingPage" page="" />
+      {/* <Navbar to="OnLandingPage" page="" /> */}
       <div className="w-full bg-slate-50 min-h-screen grid grid-cols-2">
-        <div className="desc col-span-1 bg-slate-50 flex flex-col items-center justify-center">
-          <div className="">
+        <div className="desc col-span-1 bg-slate-50 flex flex-col justify-center">
+          <div className="ml-28">
             <TitleLandingPage />
-            <p className="w-[30rem] my-3 pl-1 font-medium text-slate-600">
+            <TypingText/>
+            <p className="w-[40rem] my-3 pl-1 font-medium text-slate-500">
               Website E-Letter memungkinkan pengguna untuk membuat surat secara langsung dengan memasukkan inputan. Melalui formulir interaktif, pengguna dapat mengisi informasi yang diperlukan, memilih template, dan melihat pratinjau
               sebelum mengunduh suratnya. Platform ini memudahkan pembuatan surat secara cepat dan efisien.
             </p>

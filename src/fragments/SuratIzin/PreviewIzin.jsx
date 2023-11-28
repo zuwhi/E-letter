@@ -1,6 +1,7 @@
 import EditInput from "../../components/Input/EditInput";
 import EditInputArea from "../../components/Input/EditInputArea";
-
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.bubble.css";
 const PreviewIzin = ({ surat, handleChange }) => {
   const template = {
     pembuka: "Sehubungan dengan adanya Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, deserunt? Alias maiores architecto.",
@@ -70,6 +71,10 @@ const PreviewIzin = ({ surat, handleChange }) => {
     return date.getFullYear();
   };
 
+    const modules = {
+      toolbar: [], // Mengatur toolbar menjadi array kosong
+    };
+
   return (
     <>
       <div className="">
@@ -113,13 +118,9 @@ const PreviewIzin = ({ surat, handleChange }) => {
         </div>
 
         <div className="w-full leading-[1.15] flex  justify-end  ">
-       
           <EditInput name="kota" variant="w-32 text-right" value={surat.kota || template.kota} handleChange={handleChange} />
           <span className="ml-0.5 mr-2">,</span>
-          <p className="w-40"> 
-          {getFormattedDate()}
-          </p>
-   
+          <p className="w-40">{getFormattedDate()}</p>
         </div>
 
         <div className="leading-[1.15]">
@@ -148,7 +149,7 @@ const PreviewIzin = ({ surat, handleChange }) => {
         <br />
 
         <div className="leading-[1.15]">
-          <p>{surat.sifat_surat|| "Kepada/Yth."}</p>
+          <p>{surat.sifat_surat || "Kepada/Yth."}</p>
           <p className="font-bold capitalize">
             <EditInput name="kepada" variant="" value={surat.kepada || template.kepada} handleChange={handleChange} />
           </p>
@@ -160,8 +161,8 @@ const PreviewIzin = ({ surat, handleChange }) => {
 
         <div className="leading-[1.15]">
           <p className="font-bold italic ">Assalamu'alaikum Wr. Wb.</p>
-
-          <EditInputArea name="pembuka" variant="indent-8 w-full text-justify" value={surat.pembuka || template.pembuka} handleChange={handleChange} />
+          <ReactQuill className="indent-8 text-justify  text-5xl w-full " theme="bubble" name="pembuka" modules={modules} value={surat.pembuka || ""} onChange={(value) => handleChange({ target: { name: "pembuka", value } })} />
+          {/* <EditInputArea name="pembuka" variant="indent-8 h-20  w-full text-justify" value={surat.pembuka || template.pembuka} handleChange={handleChange} /> */}
           {/* 
             {surat.pembuka || template.pembuka} */}
         </div>
@@ -244,7 +245,7 @@ const PreviewIzin = ({ surat, handleChange }) => {
             <p>Hormat kami,</p>
           </div>
           <div className="text-center font-bold uppercase leading-[1.15]">
-          <p>{surat.panitia_pelaksana ? <>{`Panitia Pelaksana ${surat.panitia_pelaksana}`}</> : template.panitia_pelaksana}</p>
+            <p>{surat.panitia_pelaksana ? <>{`Panitia Pelaksana ${surat.panitia_pelaksana}`}</> : template.panitia_pelaksana}</p>
             {/* <p>{surat.nama_organisasi || template.nama_organisasi}</p> */}
             <EditInput name="nama_organisasi" variant="text-center font-bold uppercase" value={surat.nama_organisasi || template.nama_organisasi} handleChange={handleChange} />
 

@@ -68,6 +68,9 @@ dependencies:
   react-router-dom:
     specifier: ^6.18.0
     version: 6.18.0(react-dom@18.2.0)(react@18.2.0)
+  react-simple-typewriter:
+    specifier: ^5.0.1
+    version: 5.0.1(react-dom@18.2.0)(react@18.2.0)
   react-to-print:
     specifier: ^2.14.15
     version: 2.14.15(react-dom@18.2.0)(react@18.2.0)
@@ -3026,6 +3029,17 @@ packages:
     dependencies:
       '@remix-run/router': 1.11.0
       react: 18.2.0
+    dev: false
+
+  /react-simple-typewriter@5.0.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-vA5HkABwJKL/DJ4RshSlY/igdr+FiVY4MLsSQYJX6FZG/f1/VwN4y1i3mPXRyfaswrvI8xii1kOVe1dYtO2Row==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=18.0.0'
+      react-dom: '>=18.0.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /react-to-print@2.14.15(react-dom@18.2.0)(react@18.2.0):
