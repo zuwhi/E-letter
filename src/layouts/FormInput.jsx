@@ -7,10 +7,10 @@ const FormInput = ({ dataSurat,setSurat, setImg, children, type,formik }) => {
   }
 
   return (
-    <div className="col-span-5 h-full md:px-10 px-3 w-full  bg-slate-100 flex flex-col">
+    <div className="col-span-5 md:h-full min-h-screen md:px-10 px-3 w-full  bg-slate-100 flex flex-col">
       <div className="w-full flex my-4 justify-between">
         <div className="flex items-center">
-          <h1 className="text-2xl font-bold text-pallete ">Lengkapi Formulir Surat {type||''}</h1>
+          <h1 className="md:text-2xl font-bold text-pallete ">Lengkapi Formulir Surat {type||''}</h1>
         </div>
         <div className=" flex justify-end gap-2 items-center">
           <button

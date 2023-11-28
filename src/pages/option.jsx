@@ -6,7 +6,7 @@ export default function OptionPage() {
     <>
       <Navbar to="/" page="Option"></Navbar>
 
-      <div className="flex w-full min-h-screen items-center justify-center bg-slate-50 ">
+      <div className="md:pt-0 pt-20 flex w-full flex-wrap min-h-screen items-center justify-center bg-slate-50 ">
         <CardOption type="undangan" color="outline outline-blue-500" image="/images/undangan.png">
           <CardOption.Judul>Surat undangan</CardOption.Judul>
           <CardOption.Desc>Surat resmi yang mengajak orang atau kelompok untuk hadir dalam suatu acara dengan mencantumkan detail waktu, tempat, dan tujuan acara</CardOption.Desc>

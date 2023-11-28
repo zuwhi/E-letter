@@ -11,10 +11,9 @@ export default function TypingText() {
   });
   return (
     <>
-
-      <div className="flex relative ">
-        <h1 className="text-3xl font-bold text-slate-500  mr-2"> Kamu bisa buat Surat</h1>
-        <h1 className="text-3xl font-bold text-blue-500">{text}</h1>
+      <div className="flex items-end whitespace-nowrap">
+        <h1 className=" md:text-3xl text-xl font-bold text-slate-500  mr-2"> Kamu bisa buat Surat</h1>
+        <h1 className="md:text-3xl whitespace-nowrap text-xl font-bold text-blue-500">{text}</h1>
         <span className=" text-blue-600 text-2xl">
           <Cursor />
         </span>

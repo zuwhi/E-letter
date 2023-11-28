@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 export default function CardOption({ color, image, children, type }) {
   return (
-    <div className={`card  ${color} w-72 h-fit mx-10 shadow-xl  hover:scale-105  group ease-in-out transition duration-500 `}>
+    <div className={`card  ${color} md:w-72 w-42 h-fit mx-10 shadow-xl md:mt-0 mb-12  hover:scale-105  group ease-in-out transition duration-500 `}>
       <figure className="px-10 pt-10">
-        <img src={image} alt="Shoes" className="rounded-xl w-36 " />
+        <img src={image} alt="Shoes" className="rounded-xl w-48" />
       </figure>
       <div className="card-body items-center text-center text-pallete ">
         {children}

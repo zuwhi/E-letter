@@ -26,7 +26,7 @@ export default function Navbar({ to, page }) {
             </div>
           </div>
         </div>
-        <div className="navbar-center"> <h1 className="text-2xl text-pallete font-semibold">{page}</h1></div>
+        <div className="navbar-center"> <h1 className="md:text-2xl text-pallete font-semibold">{page}</h1></div>
         <div className="navbar-end ">
           {/* <ul className="steps scale-90">
             <li className="step step-info">Isi Form</li>
