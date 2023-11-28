@@ -9,10 +9,9 @@ function App() {
   return (
     <Router basename="/">
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/E-letter/" element={<LandingPage />} />
         <Route path="/option" element={<OptionPage />} />
         <Route path="/form" element={<FormPage />} />
-
       </Routes>
     </Router>
   );
