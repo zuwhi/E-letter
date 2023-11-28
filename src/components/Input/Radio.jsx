@@ -5,7 +5,7 @@ export default function Radio({ label, name, variant, handleChange, value, optio
         <label className="label" htmlFor={name}>
           <span className="label-text">{label}</span>
         </label>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center mt-3 gap-5">
           {options.map((option) => (
             <div key={option.value} className="flex items-center">
               <input

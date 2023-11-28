@@ -9,15 +9,19 @@ const PreviewPermohonan = ({ surat, handleChange }) => {
     nama_organisasi: "(Nama Organisasi)",
     asal_fakultas: "Fakultas (Nama Fakultas)",
     asal_universitas: "Universitas Islam Nahdlatul Ulama Jepara",
-    alamat: "Jl. Taman Siswa  (Pekeng) Tahunan Jepara ",
+    alamat: "Jl. Taman Siswa (Pekeng) Tahunan Jepara ",
     kode_pos: "59427",
-    kepada: "Subjek",
+    kepada: "(Subjek)",
     // email: "E-Mail Aktif",
     contact_person_1: "Nama CP1",
     nomor_hp_cp_1: "No. HP CP1",
     contact_person_2: "Nama CP2",
     nomor_hp_cp_2: "No. HP CP2",
     lampiran: "-",
+    ketua_panitia: "(Nama Ketua Panitia)",
+    sekertaris: "(Nama Sekretaris)",
+    ketua_organisasi: "(Nama Ketua Organisasi)",
+    alamat_tujuan: "Di Tempat",
   };
 
   function getFormattedDate() {
@@ -69,16 +73,16 @@ const PreviewPermohonan = ({ surat, handleChange }) => {
       <div className="">
         <div className="w-full flex leading-[1.0] justify-around ">
           <div className="relative w-[19%] h-fit flex items-top mt-2 pl-4 px-3">{surat.logo_instansi && <img src={surat.logo_instansi} alt="" className="w-fit" />}</div>
-          <div className="kop w-[84%] mt-2">
-            <EditInput name="panitia_pelaksana" variant="text-center font-bold uppercase" handleChange={handleChange} value={surat.panitia_pelaksana ? surat.panitia_pelaksana : ""}></EditInput>
+          <div className="kop w-[84%] mt-2 leading-[1.15]">
+            {/* <EditInput name="panitia_pelaksana" variant="text-center font-bold uppercase" handleChange={handleChange} value={surat.panitia_pelaksana ? <>{`Panitia Pelaksana ${surat.panitia_pelaksana}`}</> : template.panitia_pelaksana}></EditInput> */}
+            <p className="text-center font-bold uppercase">{surat.panitia_pelaksana ? <>{`Panitia Pelaksana ${surat.panitia_pelaksana}`}</> : template.panitia_pelaksana}</p>
             <EditInput name="nama_organisasi" variant="text-center font-bold uppercase" value={surat.nama_organisasi || template.nama_organisasi} handleChange={handleChange} />
             <EditInput name="asal_fakultas" variant="text-center font-bold uppercase" value={surat.asal_fakultas ? surat.asal_fakultas : ""} handleChange={handleChange}></EditInput>
-
             <EditInput name="asal_universitas" variant="text-center font-bold uppercase" value={surat.asal_universitas || template.asal_universitas} handleChange={handleChange}></EditInput>
             <div className="w-full whitespace-nowrap flex justify-around overflow-hidden text-center">
               <span className="w-full h-fit flex  items-center text-center bg-black text-white italic" style={{ fontSize: "14px" }}>
-                <div className="w-[63%]">
-                  Alamat: <EditInput name="alamat" variant="bg-black italic w-[70%]" value={surat.alamat || template.alamat} handleChange={handleChange} />
+                <div className="w-[70%]">
+                  Sekretariat: <EditInput name="alamat" variant="bg-black italic w-[70%]" value={surat.alamat || template.alamat} handleChange={handleChange} />
                 </div>
                 <div className="w-[5%]">
                   {"("}
@@ -142,7 +146,7 @@ const PreviewPermohonan = ({ surat, handleChange }) => {
         <br />
 
         <div className="leading-[1.15]">
-          <p>{surat.sifat_surat|| "Kepada"}</p>
+          <p>{surat.sifat_surat|| "Kepada/Yth."}</p>
           <p className="font-bold capitalize">
             <EditInput name="kepada" variant="" value={surat.kepada || template.kepada} handleChange={handleChange} />
           </p>
@@ -159,6 +163,7 @@ const PreviewPermohonan = ({ surat, handleChange }) => {
           {/* 
             {surat.pembuka || template.pembuka} */}
         </div>
+        <br />
 
         <div className="acara flex justify-center leading-[1.15]">
           <table className="w-[70%]">
@@ -199,6 +204,7 @@ const PreviewPermohonan = ({ surat, handleChange }) => {
             </tbody>
           </table>
         </div>
+        <br />
 
         <div className="leading-[1.15] mt-1">
           <EditInputArea name="penutup" variant="indent-8 h-14 w-full text-justify " value={surat.penutup || template.penutup} handleChange={handleChange} />
@@ -212,8 +218,8 @@ const PreviewPermohonan = ({ surat, handleChange }) => {
           <div className="w-full text-left leading-[1.15]">
             <p>Hormat kami,</p>
           </div>
-          <div className="text-center font-bold uppercase">
-            <p>{surat.panitia_pelaksana ? surat.panitia_pelaksana : ""}</p>
+          <div className="text-center font-bold uppercase leading-[1.15]">
+          <p>{surat.panitia_pelaksana ? <>{`Panitia Pelaksana ${surat.panitia_pelaksana}`}</> : template.panitia_pelaksana}</p>
             {/* <p>{surat.nama_organisasi || template.nama_organisasi}</p> */}
             <EditInput name="nama_organisasi" variant="text-center font-bold uppercase" value={surat.nama_organisasi || template.nama_organisasi} handleChange={handleChange} />
 
@@ -228,18 +234,18 @@ const PreviewPermohonan = ({ surat, handleChange }) => {
         <div className="pengesahan w-full flex justify-center leading-[1.15]">
           <div className=" flex w-[80%] justify-around">
             <div className="text-center">
-              <p>Sekretaris</p>
-              <br />
-              <br />
-              <p className="font-bold capitalize">{surat.nim_sekertaris ? <u>{surat.sekertaris}</u> : surat.sekertaris}</p>
-              <p>{surat.nim_sekretaris ? <span>{`NIM. ${surat.nim_sekretaris}`}</span> : ""}</p>
-            </div>
-            <div className="text-center">
               <p>Ketua Panitia</p>
               <br />
               <br />
-              <p className="font-bold capitalize">{surat.nim_ketua_panitia ? <u>{surat.ketua_panitia}</u> : surat.ketua_panitia}</p>
+              <p className="font-bold capitalize">{surat.nim_ketua_panitia ? <u>{surat.ketua_panitia}</u> : template.ketua_panitia}</p>
               <p>{surat.nim_ketua_panitia ? <span>{`NIM. ${surat.nim_ketua_panitia}`}</span> : ""}</p>
+            </div>
+            <div className="text-center">
+              <p>Sekretaris</p>
+              <br />
+              <br />
+              <p className="font-bold capitalize">{surat.nim_sekertaris ? <u>{surat.sekertaris}</u> : template.sekertaris}</p>
+              <p>{surat.nim_sekretaris ? <span>{`NIM. ${surat.nim_sekretaris}`}</span> : ""}</p>
             </div>
           </div>
         </div>
@@ -255,7 +261,7 @@ const PreviewPermohonan = ({ surat, handleChange }) => {
             <p>Ketua Organisasi</p>
             <br />
             <br />
-            <p className="font-bold capitalize">{surat.nim_ketua_organisasi ? <u>{surat.ketua_organisasi}</u> : surat.ketua_organisasi}</p>
+            <p className="font-bold capitalize">{surat.nim_ketua_organisasi ? <u>{surat.ketua_organisasi}</u> : template.ketua_organisasi}</p>
             <p>{surat.nim_ketua_organisasi ? <span>{`NIM. ${surat.nim_ketua_organisasi}`}</span> : ""}</p>
           </div>
         </div>

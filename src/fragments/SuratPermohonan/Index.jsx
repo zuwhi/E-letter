@@ -47,9 +47,9 @@ export default function FormPermohonan() {
   const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
   const rule = {
-    string: Yup.string().min(2, "Mininum 2 characters").max(128, "Maximum 128 characters").required("Masukkan input"),
-    img: Yup.string().required("Masukkan Gambar"),
-    number: Yup.number().required("Masukkan input"),
+    string: Yup.string().min(2, "Mininum 2 characters").max(128, "Maximum 128 characters").required("Bagian ini harus diisi"),
+    img: Yup.string().required("Masukkan gambar"),
+    number: Yup.number().required("Bagian ini harus diisi"),
     phone: Yup.string().matches(phoneRegExp, "Phone number is not valid"),
     waktu: Yup.string()
       .matches(/^([01]?[0-9]|2[0-3]):[0-5][0-9]$/, "Format waktu tidak valid")
@@ -60,24 +60,29 @@ export default function FormPermohonan() {
 
   const validasi = {
     nama_organisasi: rule.string,
-    acara: rule.string,
     logo_instansi: rule.img,
-    alamat_tujuan: rule.string,
     asal_fakultas: rule.string,
     contact_person_1: rule.string,
+    contact_person_2: rule.string,
+    nomor_hp_cp_1: rule.phone,
+    nomor_hp_cp_2: rule.phone,
     email: rule.string,
     kepada: rule.string,
-    ketua_panitia: rule.string,
+    alamat_tujuan: rule.string,
     kota: rule.string,
-    lampiran: rule.number,
-    tanggalMulai: rule.tanggal,
-    tanggalSelesai: rule.tanggal,
     nomer_surat: rule.string,
-    nomor_hp_cp_1: rule.phone,
-    perihal: rule.string,
-    sekertaris: rule.string,
-    tempat: rule.string,
     waktu: rule.waktu,
+    tanggalMulai: rule.tanggal,
+    tempat: rule.string,
+    acara: rule.string,
+    ketua_panitia: rule.string,
+    sekertaris: rule.string,
+    nama_organisasi: rule.string,
+    nim_ketua_panitia: rule.number,
+    nim_sekretaris: rule.number,
+    nim_ketua_organisasi: rule.number,
+    perihal: rule.string,
+    periode: rule.string,
   };
 
   const initials = {
