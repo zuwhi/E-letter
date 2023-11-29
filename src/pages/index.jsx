@@ -15,8 +15,8 @@ export default function LandingPage() {
             <TitleLandingPage />
             <TypingText/>
             <p className="md:w-[40rem] md:text-base text-sm my-3 pl-1 font-medium text-slate-500">
-              Website E-Letter memungkinkan pengguna untuk membuat surat secara langsung dengan memasukkan inputan. Melalui formulir interaktif, pengguna dapat mengisi informasi yang diperlukan, memilih template, dan melihat pratinjau
-              sebelum mengunduh suratnya. Platform ini memudahkan pembuatan surat secara cepat dan efisien.
+              Melalui formulir interaktif, pengguna dapat mengisi informasi yang diperlukan, memilih opsi surat , dan melihat pratinjau
+              sebelum mengunduh suratnya. Platform ini memudahkan pembuatan surat secara cepat dan efisien. website ini dibuat oleh rehan,isa dan ahnan untuk memenuhi tugas mata kuliah Finite State Automata
             </p>
             <Link to="/option">
               <ButtonLp variant="ml-1 bg-pallete text-white">Get Started 🚀</ButtonLp>
