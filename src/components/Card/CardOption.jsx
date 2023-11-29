@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function CardOption({ color, image, children, type }) {
   return (
@@ -8,7 +8,7 @@ export default function CardOption({ color, image, children, type }) {
       </figure>
       <div className="card-body items-center text-center text-pallete ">
         {children}
-        <div className="card-actions w-full mt-2 flex justify-end">
+        {/* <div className="card-actions w-full mt-2 flex justify-end">
           {type === "undangan" ? (
             <Link to="/form" state={{ cek: "undangan" }}>
               <button className="btn bg-pallete  text-white">Buat</button>
@@ -22,7 +22,7 @@ export default function CardOption({ color, image, children, type }) {
               <button className="btn bg-pallete  text-white">Buat</button>
             </Link>
           )}
-        </div>
+        </div> */}
       </div>
     </div>
   );
@@ -34,6 +34,15 @@ function Judul({ children }) {
 function Desc({ children }) {
   return <p className=" leading-5 text-justify font-light">{children}</p>;
 }
+function Link({ children }) {
+  return (
+    <div className="card-actions w-full mt-2 flex justify-end">
+      
+      {children}
+    </div>
+  );
+}
 
 CardOption.Judul = Judul;
 CardOption.Desc = Desc;
+CardOption.Link = Link;

@@ -6,8 +6,8 @@ import FormIzin from "../fragments/SuratIzin/Index";
 
 export default function FormPage() {
   //=========================== Mendapatkan Props dari option =============================
-  const getProps = useLocation();
-  const JenisSurat = getProps.state.cek;
-  //=======================================================================================
-  return <>{JenisSurat == "undangan" ? <FormUndangan /> : JenisSurat == "permohonan" ? <FormPermohonan /> : <FormIzin />}</>;
+  // const getProps = useLocation();
+  // const JenisSurat = getProps.state.cek;
+  // //=======================================================================================
+  // return <>{JenisSurat == "undangan" ? <FormUndangan /> : JenisSurat == "permohonan" ? <FormPermohonan /> : <FormIzin />}</>;
 }
