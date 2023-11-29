@@ -66,7 +66,6 @@ export default function FormIzin() {
     contact_person_2: rule.string,
     nomor_hp_cp_2: rule.phone,
     nomer_surat: rule.string,
-    perihal: rule.string,
     kota: rule.string,
     kepada: rule.string,
     alamat_tujuan: rule.string,

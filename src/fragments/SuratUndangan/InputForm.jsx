@@ -84,10 +84,10 @@ export default function InputForm({ handleChange, surat, error }) {
           ></InputImage>
           <Input error={error.panitia_pelaksana} label="Nama Kegiatan" placeholder="masukkan nama kegiatan..." name="panitia_pelaksana" value={surat.panitia_pelaksana || ""} handleChange={handleChange}></Input>
           <Input error={error.nama_organisasi} label="Nama Organisasi" placeholder="masukkan nama organisasi..." name="nama_organisasi" value={surat.nama_organisasi || ""} handleChange={handleChange}></Input>
-          <Input error={error.asal_fakultas} label="Asal Fakultas (Opsional)" placeholder="masukkan asal fakultas..." name="asal_fakultas" value={surat.asal_fakultas || ""} handleChange={handleChange}></Input>
-          <Input error={error.asal_universitas} label="Asal Universitas" placeholder="masukkan asal universitas..." name="asal_universitas" value={surat.asal_universitas || template.asal_universitas} handleChange={handleChange}></Input>
-          <Input error={error.alamat} label="Alamat" placeholder="masukkan alamat..." name="alamat" value={surat.alamat || template.alamat} handleChange={handleChange}></Input>
-          <Input error={error.kode_pos} label="Kode Pos" placeholder="masukkan kode pos..." name="kode_pos" value={surat.kode_pos || template.kode_pos} handleChange={handleChange}></Input>
+          <Input  label="Asal Fakultas (Opsional)" placeholder="masukkan asal fakultas..." name="asal_fakultas" value={surat.asal_fakultas || ""} handleChange={handleChange}></Input>
+          <Input  label="Asal Universitas" placeholder="masukkan asal universitas..." name="asal_universitas" value={surat.asal_universitas || template.asal_universitas} handleChange={handleChange}></Input>
+          <Input  label="Alamat" placeholder="masukkan alamat..." name="alamat" value={surat.alamat || template.alamat} handleChange={handleChange}></Input>
+          <Input  label="Kode Pos" placeholder="masukkan kode pos..." name="kode_pos" value={surat.kode_pos || template.kode_pos} handleChange={handleChange}></Input>
           <Input error={error.email} label="Email" type="email" placeholder="masukkan email..." name="email" value={surat.email || ""} handleChange={handleChange}></Input>
           {/* not yet */}
           <Select error={error.periode} label="Periode Pengurus" name="periode" value={surat.periode || ""} handleChange={handleChange} className="select select-bordered w-full bg-blue-50 mt-2" options={generateYearOptions()} />

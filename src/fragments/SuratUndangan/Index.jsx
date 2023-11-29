@@ -60,9 +60,9 @@ export default function FormUndangan() {
 
 
   const validasi = {
+    logo_instansi: rule.img,
     panitia_pelaksana: rule.string,
     nama_organisasi: rule.string,
-    logo_instansi: rule.img,
     email: rule.string,
     periode: rule.string,
     contact_person_1: rule.string,
@@ -70,7 +70,6 @@ export default function FormUndangan() {
     contact_person_2: rule.string,
     nomor_hp_cp_2: rule.phone,
     nomer_surat: rule.string,
-    perihal: rule.string,
     kota: rule.string,
     kepada: rule.string,
     alamat_tujuan: rule.string,
