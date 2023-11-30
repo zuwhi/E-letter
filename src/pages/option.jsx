@@ -29,9 +29,11 @@ export default function OptionPage() {
         <CardOption type="izin" color="outline outline-blue-500" image="/images/izin.png">
           <CardOption.Judul>Surat Izin</CardOption.Judul>
           <CardOption.Desc>Surat resmi yang memberikan kepastian atau persetujuan dari pihak yang berwenang terhadap suatu tindakan atau kegiatan tertentu.</CardOption.Desc>
-          <Link to="/formIzin">
-            <button className="btn bg-pallete  text-white">Buat</button>
-          </Link>
+          <CardOption.Link>
+            <Link to="/formIzin">
+              <button className="btn bg-pallete  text-white">Buat</button>
+            </Link>
+          </CardOption.Link>
         </CardOption>
       </div>
     </>
